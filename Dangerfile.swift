@@ -3,6 +3,8 @@ import Foundation
 
 let danger = Danger()
 
-dump(danger.github)
+print("🟡 Start")
 
 SwiftLint.lint(inline: true) 
+
+print("🟢 Done")
