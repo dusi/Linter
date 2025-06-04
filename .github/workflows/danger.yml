@@ -5,16 +5,14 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  danger:
+  build:
     runs-on: ubuntu-latest
+    name: "Run Danger"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: docker://ghcr.io/danger/danger-swift:3.15.0
         with:
-          fetch-depth: 0
-
-      - name: Install Danger Swift
-        uses: danger/swift@3.20.2
+            args: --failOnErrors --no-publish-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # with:
-        #   args: '--failOnErrors'
