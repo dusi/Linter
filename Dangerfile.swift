@@ -3,8 +3,9 @@ import Foundation
 
 let danger = Danger()
 
-print("🟡 Start")
+let changedFiles = danger.git.modifiedFiles + danger.git.createdFiles
 
-SwiftLint.lint(inline: true) 
-
-print("🟢 Done")
+SwiftLint.lint(
+    .files(changedFiles),
+    inline: true
+) 
