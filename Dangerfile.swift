@@ -7,5 +7,6 @@ let changedFiles = danger.git.modifiedFiles + danger.git.createdFiles
 
 SwiftLint.lint(
     .files(changedFiles),
-    inline: true
+    inline: true,
+    strict: true
 ) 
