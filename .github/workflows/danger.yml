@@ -12,13 +12,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Make SwiftLint executable
-        run: chmod +x scripts/swiftlint
-
       - name: Install Danger Swift
         uses: danger/swift@3.20.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PATH: ${{ github.workspace }}/scripts:${{ env.PATH }}
+        run: ./scripts/run-danger.sh https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }} --verbose
         with:
           args: '--failOnErrors'
