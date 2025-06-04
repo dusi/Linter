@@ -14,6 +14,8 @@ jobs:
 
       - name: Install Danger Swift
         uses: danger/swift@3.20.2
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         with:
           args: '--failOnErrors'
 
