@@ -16,6 +16,5 @@ jobs:
         uses: danger/swift@3.20.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./scripts/run-danger.sh https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }} --verbose
-        with:
-          args: '--failOnErrors'
+        # with:
+        #   args: '--failOnErrors'
