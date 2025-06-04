@@ -1,0 +1,9 @@
+custom_rules:
+  modernized:
+    included:
+      - "Legacy/.*\\.swift"
+      - "Legacy2/.*\\.swift"
+    name: "Modernized No Bueno"
+    regex: "Modernized"
+    message: "We don't talk about Modernized in Legacy"
+    severity: warning

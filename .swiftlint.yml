@@ -1,0 +1,11 @@
+included:
+ - Fitbod
+ - Modules
+
+custom_rules:
+  objc:
+    included: ".*\\.swift"
+    name: "ObjC No Bueno"
+    regex: "ObjC"
+    message: "We don't do ObjC here"
+    severity: warning
